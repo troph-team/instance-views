@@ -568,7 +568,7 @@ function add_css(target) {
 	append_styles(target, "svelte-8lajst", ".label.svelte-8lajst{margin-right:5px;font-size:10px;color:rgba(0, 0, 0, 0.5);font-variant:small-caps}.text.svelte-8lajst{display:flex;flex-direction:row}.value.svelte-8lajst{font-size:10px}.box.svelte-8lajst{width:min-content;padding:5px;border:0.5px solid rgb(224, 224, 224)}");
 }
 
-// (28:2) {#if modelColumn && entry[modelColumn]}
+// (23:2) {#if modelColumn && entry[modelColumn]}
 function create_if_block(ctx) {
 	let div;
 	let span0;
@@ -627,94 +627,83 @@ function create_if_block(ctx) {
 
 function create_fragment(ctx) {
 	let div1;
-	let img;
-	let img_src_value;
-	let img_alt_value;
-	let t0;
 	let video;
 	let source;
 	let source_src_value;
-	let t1;
+	let t0;
 	let a;
-	let t2;
+	let t1;
 	let a_href_value;
+	let t2;
 	let t3;
-	let t4;
 	let br;
-	let t5;
+	let t4;
 	let div0;
 	let span0;
+	let t5;
 	let t6;
-	let t7;
 	let span1;
-	let t8_value = /*entry*/ ctx[0][/*labelColumn*/ ctx[2]] + "";
+	let t7_value = /*entry*/ ctx[0][/*labelColumn*/ ctx[2]] + "";
+	let t7;
 	let t8;
-	let t9;
 	let if_block = /*modelColumn*/ ctx[1] && /*entry*/ ctx[0][/*modelColumn*/ ctx[1]] && create_if_block(ctx);
 
 	return {
 		c() {
 			div1 = element("div");
-			img = element("img");
-			t0 = space();
 			video = element("video");
 			source = element("source");
-			t1 = text("\n    Download the\n    ");
+			t0 = text("\n    Download the\n    ");
 			a = element("a");
-			t2 = text("MP4");
-			t3 = text("\n    video.");
-			t4 = space();
+			t1 = text("MP4");
+			t2 = text("\n    video.");
+			t3 = space();
 			br = element("br");
-			t5 = space();
+			t4 = space();
 			div0 = element("div");
 			span0 = element("span");
-			t6 = text("label:");
-			t7 = space();
+			t5 = text("label:");
+			t6 = space();
 			span1 = element("span");
-			t8 = text(t8_value);
-			t9 = space();
+			t7 = text(t7_value);
+			t8 = space();
 			if (if_block) if_block.c();
 			this.h();
 		},
 		l(nodes) {
 			div1 = claim_element(nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			img = claim_element(div1_nodes, "IMG", { src: true, alt: true });
-			t0 = claim_space(div1_nodes);
 			video = claim_element(div1_nodes, "VIDEO", { width: true });
 			var video_nodes = children(video);
 			source = claim_element(video_nodes, "SOURCE", { src: true, type: true });
-			t1 = claim_text(video_nodes, "\n    Download the\n    ");
+			t0 = claim_text(video_nodes, "\n    Download the\n    ");
 			a = claim_element(video_nodes, "A", { href: true });
 			var a_nodes = children(a);
-			t2 = claim_text(a_nodes, "MP4");
+			t1 = claim_text(a_nodes, "MP4");
 			a_nodes.forEach(detach);
-			t3 = claim_text(video_nodes, "\n    video.");
+			t2 = claim_text(video_nodes, "\n    video.");
 			video_nodes.forEach(detach);
-			t4 = claim_space(div1_nodes);
+			t3 = claim_space(div1_nodes);
 			br = claim_element(div1_nodes, "BR", {});
-			t5 = claim_space(div1_nodes);
+			t4 = claim_space(div1_nodes);
 			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
 			span0 = claim_element(div0_nodes, "SPAN", { class: true });
 			var span0_nodes = children(span0);
-			t6 = claim_text(span0_nodes, "label:");
+			t5 = claim_text(span0_nodes, "label:");
 			span0_nodes.forEach(detach);
-			t7 = claim_space(div0_nodes);
+			t6 = claim_space(div0_nodes);
 			span1 = claim_element(div0_nodes, "SPAN", { class: true });
 			var span1_nodes = children(span1);
-			t8 = claim_text(span1_nodes, t8_value);
+			t7 = claim_text(span1_nodes, t7_value);
 			span1_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
-			t9 = claim_space(div1_nodes);
+			t8 = claim_space(div1_nodes);
 			if (if_block) if_block.l(div1_nodes);
 			div1_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			if (!src_url_equal(img.src, img_src_value = /*entry*/ ctx[0][/*dataColumn*/ ctx[3]])) attr(img, "src", img_src_value);
-			attr(img, "alt", img_alt_value = "Image thumbnail for instance " + /*entry*/ ctx[0][/*idColumn*/ ctx[4]]);
-			set_style(img, "max-width", `200px`);
 			if (!src_url_equal(source.src, source_src_value = /*entry*/ ctx[0][/*dataColumn*/ ctx[3]])) attr(source, "src", source_src_value);
 			attr(source, "type", "video/mp4");
 			attr(a, "href", a_href_value = /*entry*/ ctx[0][/*dataColumn*/ ctx[3]]);
@@ -728,35 +717,25 @@ function create_fragment(ctx) {
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
-			append_hydration(div1, img);
-			append_hydration(div1, t0);
 			append_hydration(div1, video);
 			append_hydration(video, source);
-			append_hydration(video, t1);
+			append_hydration(video, t0);
 			append_hydration(video, a);
-			append_hydration(a, t2);
-			append_hydration(video, t3);
-			append_hydration(div1, t4);
+			append_hydration(a, t1);
+			append_hydration(video, t2);
+			append_hydration(div1, t3);
 			append_hydration(div1, br);
-			append_hydration(div1, t5);
+			append_hydration(div1, t4);
 			append_hydration(div1, div0);
 			append_hydration(div0, span0);
-			append_hydration(span0, t6);
-			append_hydration(div0, t7);
+			append_hydration(span0, t5);
+			append_hydration(div0, t6);
 			append_hydration(div0, span1);
-			append_hydration(span1, t8);
-			append_hydration(div1, t9);
+			append_hydration(span1, t7);
+			append_hydration(div1, t8);
 			if (if_block) if_block.m(div1, null);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*entry, dataColumn*/ 9 && !src_url_equal(img.src, img_src_value = /*entry*/ ctx[0][/*dataColumn*/ ctx[3]])) {
-				attr(img, "src", img_src_value);
-			}
-
-			if (dirty & /*entry, idColumn*/ 17 && img_alt_value !== (img_alt_value = "Image thumbnail for instance " + /*entry*/ ctx[0][/*idColumn*/ ctx[4]])) {
-				attr(img, "alt", img_alt_value);
-			}
-
 			if (dirty & /*entry, dataColumn*/ 9 && !src_url_equal(source.src, source_src_value = /*entry*/ ctx[0][/*dataColumn*/ ctx[3]])) {
 				attr(source, "src", source_src_value);
 			}
@@ -765,7 +744,7 @@ function create_fragment(ctx) {
 				attr(a, "href", a_href_value);
 			}
 
-			if (dirty & /*entry, labelColumn*/ 5 && t8_value !== (t8_value = /*entry*/ ctx[0][/*labelColumn*/ ctx[2]] + "")) set_data(t8, t8_value);
+			if (dirty & /*entry, labelColumn*/ 5 && t7_value !== (t7_value = /*entry*/ ctx[0][/*labelColumn*/ ctx[2]] + "")) set_data(t7, t7_value);
 
 			if (/*modelColumn*/ ctx[1] && /*entry*/ ctx[0][/*modelColumn*/ ctx[1]]) {
 				if (if_block) {
@@ -799,14 +778,14 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$props => {
 		if ('entry' in $$props) $$invalidate(0, entry = $$props.entry);
-		if ('options' in $$props) $$invalidate(5, options = $$props.options);
+		if ('options' in $$props) $$invalidate(4, options = $$props.options);
 		if ('modelColumn' in $$props) $$invalidate(1, modelColumn = $$props.modelColumn);
 		if ('labelColumn' in $$props) $$invalidate(2, labelColumn = $$props.labelColumn);
 		if ('dataColumn' in $$props) $$invalidate(3, dataColumn = $$props.dataColumn);
-		if ('idColumn' in $$props) $$invalidate(4, idColumn = $$props.idColumn);
+		if ('idColumn' in $$props) $$invalidate(5, idColumn = $$props.idColumn);
 	};
 
-	return [entry, modelColumn, labelColumn, dataColumn, idColumn, options];
+	return [entry, modelColumn, labelColumn, dataColumn, options, idColumn];
 }
 
 class InstanceView extends SvelteComponent {
@@ -821,11 +800,11 @@ class InstanceView extends SvelteComponent {
 			safe_not_equal,
 			{
 				entry: 0,
-				options: 5,
+				options: 4,
 				modelColumn: 1,
 				labelColumn: 2,
 				dataColumn: 3,
-				idColumn: 4
+				idColumn: 5
 			},
 			add_css
 		);
