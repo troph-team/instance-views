@@ -8,11 +8,6 @@
 </script>
 
 <div class="box" style:background-color="white">
-  <img
-    src={entry[dataColumn]}
-    style:max-width="200px"
-    alt="Image thumbnail for instance {entry[idColumn]}"
-  />
   <!-- svelte-ignore a11y-media-has-caption -->
   <video controls width="250">
     <source src={entry[dataColumn]} type="video/mp4" />
