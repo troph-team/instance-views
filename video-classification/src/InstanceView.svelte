@@ -1,5 +1,4 @@
 <script lang="ts">
-  import IconButton, { Icon } from '@smui/icon-button';
   import FavHeader from './FavHeader.svelte'
   export let entry;
   export let options;
@@ -7,22 +6,13 @@
   export let labelColumn;
   export let dataColumn;
   export let idColumn;
+  export let handlers;
 
-  let isFav = false
-
-  const toggleFav = () => {
-    isFav = !isFav
-
-    if (isFav) {
-      console.log('create fav')
-    } else {
-      console.log('remove fav')
-    }
-  }
+  let onFavorite = handlers?.onFavorite
 </script>
 
 <div class="box" style:background-color="white">
-  <FavHeader />
+  <FavHeader {onFavorite} {entry} />
   <!-- svelte-ignore a11y-media-has-caption -->
   <video controls width="250">
     <source src={entry[dataColumn]} type="video/mp4" />
@@ -37,7 +27,6 @@
     <span class="label">label: </span>
     <span class="value">{entry[labelColumn]}</span>
   </div>
-  <div>222</div>
   {#if modelColumn && entry[modelColumn]}
     <div class="text">
       <span class="label">output: </span>

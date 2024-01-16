@@ -1,24 +1,37 @@
 <script lang="ts">
-  $: isFav = false
+  import debounce from 'lodash.debounce'
+  import StarFilled from "./images/star-filled.svelte";
+  import StarStroke from "./images/star-stroke.svelte";
+  export let onFavorite;
+  export let entry;
 
-  const toggleFav = () => {
+  $: isFav = entry?.is_fav || false
+
+  const toggleFav = debounce(() => {
     isFav = !isFav
-
-    if (isFav) {
-      console.log('create fav')
-    } else {
-      console.log('remove fav')
-    }
-  }
+    onFavorite?.(entry.index, isFav)
+  }, 200)
 </script>
 
 <div class="fav-header">
-    <button on:click={toggleFav}>{isFav}</button>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <div class="star" on:click={toggleFav}>
+    {#if isFav}
+      <StarFilled />
+    {/if}
+    {#if !isFav}
+      <StarStroke />
+    {/if}
+  </div>
 </div>
 
 <style>
   .fav-header {
     display: flex;
     justify-content: flex-end;
+  }
+  .star {
+    height: 36px;
+    widows: 36px;
   }
 </style>

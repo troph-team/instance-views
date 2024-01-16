@@ -9,6 +9,7 @@ export function getInstance(
   labelColumn,
   dataColumn,
   idColumn,
+  handlers,
 ) {
   new InstanceView({
     target: div,
@@ -19,6 +20,7 @@ export function getInstance(
       labelColumn: labelColumn,
       dataColumn: dataColumn,
       idColumn: idColumn,
+      handlers,
     },
     hydrate: true,
   });
