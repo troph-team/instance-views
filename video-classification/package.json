@@ -5,6 +5,7 @@
   "module": "./index.mjs",
   "scripts": {
     "build": "rollup -c",
+    "watch": "rollup -w -c",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {

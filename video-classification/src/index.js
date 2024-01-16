@@ -8,7 +8,7 @@ export function getInstance(
   modelColumn,
   labelColumn,
   dataColumn,
-  idColumn
+  idColumn,
 ) {
   new InstanceView({
     target: div,
@@ -24,11 +24,11 @@ export function getInstance(
   });
 }
 
-// export function getOptions(div, setOptions) {
-//   new OptionsView({
-//     target: div,
-//     props: {
-//       setOptions,
-//     },
-//   });
-// }
+export function getOptions(div, setOptions) {
+  new OptionsView({
+    target: div,
+    props: {
+      setOptions,
+    },
+  });
+}
