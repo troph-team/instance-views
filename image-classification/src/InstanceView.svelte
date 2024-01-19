@@ -11,6 +11,7 @@
   <img
     src={entry[dataColumn]}
     style:max-width="200px"
+    loading="lazy"
     alt="Image thumbnail for instance {entry[idColumn]}"
   />
   <br />
